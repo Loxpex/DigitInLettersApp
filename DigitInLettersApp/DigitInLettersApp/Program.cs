@@ -7,13 +7,13 @@ namespace LettersApp
         static void Main()
         {
             int a;
-            string s1 = "";
+            string s1 = "";                                              //Разряды
             string s2 = "";
             string s3 = "";
             string s4 = "";
             string s5 = "";
-        Back1:
-            Console.WriteLine("Введите число до 9999");
+        Back1:                                                          // Метка на goto (Простите я знаю что это плохо его использовать)
+            Console.WriteLine("Введите число до 9999");                 //Проверка на на размер числа и число ли это вообще
             try
             {
                 a = Convert.ToInt32(Console.ReadLine());
@@ -34,7 +34,7 @@ namespace LettersApp
                 goto Back1;
             }
             Console.WriteLine("");
-            switch (a / 1000)
+            switch (a / 1000)                                                     //првоерка на число в разряде, и так для каждого разряда
             {
                 case 1:
                     s1 = ("Тысяча ");
@@ -195,7 +195,7 @@ namespace LettersApp
                         break;
                 }
             }
-            if (a == 0)
+            if (a == 0)                                      //особые случаи
             {
                 s1 = ("ноль рублей");
             }
@@ -208,7 +208,7 @@ namespace LettersApp
             Console.WriteLine("");
             string sf = string.Join("", s1, s2, s3, s4, s5);
             sf = sf.Trim();
-            sf = char.ToUpper(sf[0]) + sf.Substring(1);
+            sf = char.ToUpper(sf[0]) + sf.Substring(1);                        //делаем строку с большой буквы
             Console.WriteLine(sf);
         }
     }
